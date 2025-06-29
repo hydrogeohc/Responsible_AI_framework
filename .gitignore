@@ -1,0 +1,7 @@
+# pdf
+*.pdf
+*.csv
+
+/wearable_dataset
+/myenv
+
