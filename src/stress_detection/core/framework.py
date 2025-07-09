@@ -99,22 +99,30 @@ class ResponsibleAIFramework:
         
         training_losses = []
         
+        # Convert to tensors
+        X_tensor = torch.FloatTensor(features_scaled)
+        y_tensor = torch.LongTensor(labels)
+        
+        # Create data loader for batch processing
+        from torch.utils.data import DataLoader, TensorDataset
+        dataset = TensorDataset(X_tensor, y_tensor)
+        dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+        
         for epoch in range(epochs):
             if carbon_success:
                 self.carbon_tracker.epoch_start()
             
-            # Convert to tensors
-            X_tensor = torch.FloatTensor(features_scaled)
-            y_tensor = torch.LongTensor(labels)
+            epoch_loss = 0
+            for batch_X, batch_y in dataloader:
+                # Training step
+                optimizer.zero_grad()
+                outputs = self.model(batch_X)
+                loss = criterion(outputs, batch_y)
+                loss.backward()
+                optimizer.step()
+                epoch_loss += loss.item()
             
-            # Training step
-            optimizer.zero_grad()
-            outputs = self.model(X_tensor)
-            loss = criterion(outputs, y_tensor)
-            loss.backward()
-            optimizer.step()
-            
-            training_losses.append(loss.item())
+            training_losses.append(epoch_loss / len(dataloader))
             
             if carbon_success:
                 self.carbon_tracker.epoch_end()
