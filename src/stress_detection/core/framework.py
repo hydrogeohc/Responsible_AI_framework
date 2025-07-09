@@ -15,8 +15,8 @@ from .carbon_tracker import RealCarbonTracker
 from .explainer import SHAPExplainer
 from .federated_learning import FlowerFederatedLearning
 from .privacy_layer import PrivacyLayer
-from models.stress_models import StressDetectionModel, TimeSeriesStressModel, BiLSTMStressModel
-from data.data_utils import get_sample_data_for_demo
+from ..models.stress_models import StressDetectionModel, TimeSeriesStressModel, BiLSTMStressModel
+from ..data.data_utils import get_sample_data_for_demo
 
 logger = logging.getLogger(__name__)
 

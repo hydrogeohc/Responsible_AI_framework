@@ -18,3 +18,17 @@ flwr>=1.19.0
 # Additional utilities
 pyyaml>=6.0.0
 tqdm>=4.60.0
+
+# PySyft for privacy-preserving machine learning
+syft>=0.8.0
+
+# Additional dependencies for street light integration
+requests>=2.25.0
+python-dateutil>=2.8.0
+
+# Development and testing
+pytest>=7.0.0
+jupyterlab>=3.0.0
+
+# Optional: For better performance
+psutil>=5.8.0
