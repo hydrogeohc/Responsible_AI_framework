@@ -72,8 +72,8 @@ A comprehensive framework that integrates responsible AI principles including ca
 │           ├── constants.py      # Constants and configuration
 │           └── metrics.py        # Performance metrics
 ├── config/                       # Configuration files
-├── smart_city_light/             # Street light dataset
-├── wearable_dataset/             # Wearable sensor dataset
+├── smart_city_light/             # Street light dataset (not shared here)
+├── wearable_dataset/             # Wearable sensor dataset (not shared here)
 ├── saved_models/                 # Trained model checkpoints
 └── carbon_logs/                  # Carbon tracking logs
 ```
