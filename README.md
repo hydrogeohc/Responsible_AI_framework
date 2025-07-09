@@ -1,4 +1,4 @@
-# 🏙️ Responsible AI Framework for Smart City Street Lighting
+# 🏙️ Responsible AI Framework for IoT devices
 
 A comprehensive framework that integrates responsible AI principles including carbon tracking, explainability, federated learning, and privacy preservation for both stress detection and smart city street lighting systems.
 
